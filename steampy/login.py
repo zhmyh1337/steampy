@@ -123,6 +123,7 @@ class LoginExecutor:
         if parameters is None:
             raise Exception('Cannot perform redirects after login, no parameters fetched')
         for pass_data in parameters:
+            pass_data['params'].update({'steamID': response_dict['steamID']})
             multipart_fields = {
                 key: (None, str(value))
                 for key, value in pass_data['params'].items()
