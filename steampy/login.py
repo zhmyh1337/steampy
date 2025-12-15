@@ -128,7 +128,7 @@ class LoginExecutor:
                 key: (None, str(value))
                 for key, value in pass_data['params'].items()
             }
-            self.session.post(pass_data['url'], files = multipart_fields)
+            self.session.post(pass_data['url'], files=multipart_fields)
 
     def _update_steam_guard(self, login_response: Response) -> None:
         client_id = login_response.json()['response']['client_id']
@@ -163,4 +163,4 @@ class LoginExecutor:
             'Referer': redir,
             'Origin': 'https://steamcommunity.com'
         }
-        return self.session.post("https://login.steampowered.com/jwt/finalizelogin", headers = headers, files = files)
+        return self.session.post("https://login.steampowered.com/jwt/finalizelogin", headers=headers, files=files)
