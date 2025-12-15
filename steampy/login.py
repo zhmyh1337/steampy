@@ -163,4 +163,4 @@ class LoginExecutor:
             'Referer': redir,
             'Origin': SteamUrl.COMMUNITY_URL
         }
-        return self.session.post(f"{SteamUrl.LOGIN_URL}/jwt/finalizelogin", headers=headers, files=files)
+        return self.session.post(SteamUrl.LOGIN_URL + '/jwt/finalizelogin', headers=headers, files=files)
