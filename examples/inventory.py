@@ -1,27 +1,32 @@
 import json
+import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 
 from steampy.client import InvalidCredentials, SteamClient
 from steampy.models import GameOptions
 
-# Your Steam username
-username = ''
+# Load environment variables from .env file
+load_dotenv()
+
+# Load credentials from environment variables
+username = os.getenv('STEAM_USERNAME', '')
 
 # Path to Steamguard file
-steam_guard_path = ''
+steam_guard_path = os.getenv('STEAM_GUARD_PATH', '')
 
 # Your Steam password
-password = ''
+password = os.getenv('STEAM_PASSWORD', '')
 
 # Your Steam api key (http://steamcommunity.com/dev/apikey)
-steam_key = ''
+steam_key = os.getenv('STEAM_API_KEY', '')
 
 # The game's app id. If not supplied, it will ask for input later
-app_id = ''
+app_id = os.getenv('STEAM_APP_ID', '')
 
 # The game's context id. If not supplied, it will ask for input later
-context_id = ''
+context_id = os.getenv('STEAM_CONTEXT_ID', '')
 
 
 # Log in into Steam. First, we create the SteamClient object, then we log in.

@@ -1,15 +1,20 @@
+import os
 import time
+from dotenv import load_dotenv
 
 from steampy.client import SteamClient, TradeOfferState
 
+# Load environment variables from .env file
+load_dotenv()
+
 # Set API key
-api_key = ''
+api_key = os.getenv('STEAM_API_KEY', '')
 # Set path to SteamGuard file
-steamguard_path = ''
+steamguard_path = os.getenv('STEAM_GUARD_PATH', '')
 # Steam username
-username = ''
+username = os.getenv('STEAM_USERNAME', '')
 # Steam password
-password = ''
+password = os.getenv('STEAM_PASSWORD', '')
 
 
 def main() -> None:

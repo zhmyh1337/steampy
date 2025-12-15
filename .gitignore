@@ -5,6 +5,7 @@ db.sqlite3
 *.pwd
 Steamguard*
 data.json
+.env
 steampy.egg-info
 dist
 debug.*
